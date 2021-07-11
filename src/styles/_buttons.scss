@@ -1,0 +1,49 @@
+button {
+    border: 1px solid $gray;
+    border-radius: 0;
+    background-color: #ffffff;
+    color: $gray;
+    font-family: "Courier New", monospace;
+    position: relative;
+    cursor: pointer;
+
+    &:hover{
+        background: transparent;
+
+        &:before {
+            content: '';
+            height: 100%;
+            width: 100%;
+            top: 5px;
+            left: 5px;
+            background-color: $blue;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    &.square {
+        aspect-ratio: 1/1;
+        height: 25px;
+    }
+
+    &.orange {
+        background: $orange;
+
+        &::before {
+            content: none;
+        }
+    }
+
+    &.btn-lg {
+        padding: 10px 15px;
+    }
+
+    &[disabled]{ 
+        background: #d3d3d3;
+        
+        &::before{
+            content: none;
+        }
+    }
+}
